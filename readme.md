@@ -176,16 +176,28 @@ docker ps --all
 ### Inicializa um container inativo
 ```
 docker container start <nome-container>
+
+ou
+
+docker container start <id-container>
 ```
 
 ### Para um container ativo
 ```
 docker container stop <nome-container>
+
+ou
+
+docker container stop <id-container>
 ```
 
 ### Reinicia um container ativo
 ```
 docker container restart <nome-container>
+
+ou
+
+docker container restart <id-container>
 ```
 
 # Contribuidor
