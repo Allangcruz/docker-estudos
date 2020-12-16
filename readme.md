@@ -61,6 +61,15 @@ docker build \
     -t <nome-imagem>:<tag> -f Dockerfile .
 ```
 
+### Constroi uma nova image, passando argumentos, e ignorando cache
+```
+docker build \
+    --build-arg <chave>=<valor> \
+    --build-arg <chave>=<valor> \
+    --no-cache \
+    -t <nome-imagem>:<tag> -f Dockerfile .
+```
+
 ### Executa um container
 ```
 docker container run <nome-imagem>:<tag>
@@ -73,7 +82,7 @@ docker container run --name <nome-imagem> <nome-imagem>:<tag>
 
 ### Executa um container, especificando o nome do container, e apos a execução exclui o container (--rm)
 ```
-docker run --rm --name <nome-imagem> <nome-imagem>:<tag>
+docker container run --rm --name <nome-imagem> <nome-imagem>:<tag>
 ```
 
 ### Executa um container, especificando o nome do container, e apos a execução exclui o container (--rm), executa em modo interativo
@@ -97,29 +106,35 @@ docker run \
     <nome-imagem>:<tag>
 ```
 
+### Executa um container, especificando o nome do container, e apos a execução exclui o container (--rm), executa em modo interativo, especifica arquivo de variavel de ambiente, ou uma variavel de ambiente pontual, especificando portas
 ```
 docker run \
     --rm \
     -it \
     --name <nome-imagem> \
     --env-file <path-arquivo-env> \
-    -p <porta-host>:<porta-container> 
+    --env <chave-env>=<valor-env> \
+    -e <chave-env>=<valor-env> \
+    -p <porta-host>:<porta-container> \
     <nome-imagem>:<tag>
 ```
 
+### Executa um container, especificando o nome do container, e apos a execução exclui o container (--rm), executa em modo interativo, especifica arquivo de variavel de ambiente, ou uma variavel de ambiente pontual (-v ou --env), especificando portas (-p ou --port), mapeando volume (-v ou --volume)
 ```
-docker run \
+docker container run \
     --rm \
     -it \
     --name <nome-imagem> \
     --env-file <path-arquivo-env> \
+    --env <chave-env>=<valor-env> \
+    -e <chave-env>=<valor-env> \
     -p <porta-host>:<porta-container> \
     -v <path-host>:<path-container> \
     <nome-imagem>:<tag>
 ```
 
 ```
-docker run \
+docker container run \
     --rm \
     -it \
     --publish 8000:8080 \
@@ -131,7 +146,7 @@ docker run \
 ```
 
 ```
-docker run \
+docker container run \
     --rm \
     -it \
     --publish 8000:8080 \
@@ -144,12 +159,33 @@ docker run \
 ```
 
 
+### Lista todos os containers ativos
 ```
 docker ps
 ```
 
+### Lista todos os containers ativos e inativos
 ```
 docker ps -a
+
+ou
+
+docker ps --all
+```
+
+### Inicializa um container inativo
+```
+docker container start <nome-container>
+```
+
+### Para um container ativo
+```
+docker container stop <nome-container>
+```
+
+### Reinicia um container ativo
+```
+docker container restart <nome-container>
 ```
 
 # Contribuidor
