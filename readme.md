@@ -29,7 +29,9 @@ docker login <url-register>
 Autentica especificando o usuario e senha (token criado não senha)
 
 ```
-docker login <url-register> --username <seu-login-no-github> --password <seu-personal-access-token>
+docker login <url-register> \
+    --username <seu-login-no-github> \
+    --password <seu-personal-access-token>
 ```
 
 ### Baixa a imagem do repositorio remoto (docker-hub, git-package, harbor)
