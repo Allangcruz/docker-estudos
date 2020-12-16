@@ -162,6 +162,18 @@ docker container run \
 ### Lista todos os containers ativos
 ```
 docker ps
+
+ou
+
+docker container ps
+
+ou
+
+docker container ls
+
+ou
+
+docker container list
 ```
 
 ### Lista todos os containers ativos e inativos
@@ -171,6 +183,18 @@ docker ps -a
 ou
 
 docker ps --all
+
+ou
+
+docker container ps -a
+
+ou
+
+docker container ls -a
+
+ou
+
+docker container list -a
 ```
 
 ### Inicializa um container inativo
@@ -198,6 +222,23 @@ docker container restart <nome-container>
 ou
 
 docker container restart <id-container>
+```
+
+### Lista os logs do container
+```
+docker container logs <nome-container>
+```
+
+### Exibe informações detalhada do container (--inspect)
+```
+docker container inspect <nome-container>
+```
+
+###
+```
+docker container exec <nome-container> <comandos-linux>
+
+docker container exec meu-container uname -ar
 ```
 
 # Contribuidor
