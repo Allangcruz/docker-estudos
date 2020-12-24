@@ -18,6 +18,7 @@ Para saber mais sobre o docker verifique a [introdução](https://github.com/All
 - [Volume](https://github.com/Allangcruz/docker-estudos/blob/master/volume.md)
 - [Container](https://github.com/Allangcruz/docker-estudos/blob/master/container.md)
 - [Network](https://github.com/Allangcruz/docker-estudos/blob/master/network.md)
+- [Dockerfile](https://github.com/Allangcruz/docker-estudos/blob/master/dockerfile.md)
 - [Docker Compose](https://github.com/Allangcruz/docker-estudos/blob/master/docker-compose.md)
 
 
