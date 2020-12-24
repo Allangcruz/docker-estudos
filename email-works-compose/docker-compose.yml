@@ -1,0 +1,25 @@
+version: '3'
+volumes:
+  dados:
+services:
+  db:
+    image: postgres:9.6
+    container_name: db-postgres-9.6
+    # entrypoint: /docker-entrypoint-initdb.d/init.sql
+    volumes:
+      # Volumes dos dados
+      - dados:/var/lib/postgresql/data
+      # Scripts
+      - ./scripts:/scripts
+      - ./scripts/init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      - POSTGRES_PASSWORD=password
+  frontend:
+    image: nginx:latest
+    container_name: frontend-nginx
+    volumes:
+      # Site
+      - ./web:/usr/share/nginx/html/
+    ports:
+      - 8000:80
+
