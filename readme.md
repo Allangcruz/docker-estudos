@@ -19,6 +19,15 @@ docker --version
 ### Lista as images baixadas de algum register
 ```
 docker images
+
+ou
+
+docker images ls
+```
+
+### Lista os volumes criados
+```
+docker volumes ls
 ```
 
 ### Autentica o acesso do docker em um register privado, para permitir subir images
@@ -36,12 +45,12 @@ docker login <url-register> \
 
 ### Baixa a imagem do repositorio remoto (docker-hub, git-package, harbor)
 ```
-docker pull <nome-imagem>:<tag>
+docker image pull <nome-imagem>:<tag>
 ```
 
 ### Envia a imagem para repositorio remoto (docker-hub, git-package, harbor)
 ```
-docker push <nome-imagem>:<tag>
+docker image push <nome-imagem>:<tag>
 ```
 
 ### Constroi uma nova image, nomeando com uma tag, e especificando arquivo
@@ -243,3 +252,8 @@ docker container exec meu-container uname -ar
 
 # Contribuidor
 [Allangcruz](https://github.com/Allangcruz)
+
+
+# Dividir em 'image', 'volume', 'container', 'network'
+
+https://docs.docker.com/engine/reference/commandline/docker/
